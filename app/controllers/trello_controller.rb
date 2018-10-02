@@ -10,12 +10,14 @@ class TrelloController < ApplicationController
   def sticky
     @trello = Posit.all
   end
-  #def destroy
-   # @trello = Posit.find(params[:id])
-    #@trello.destroy
+  def destroy
+    @trello = Posit.find(params[:id])
+    @trello.destroy
  
-    #redirect_to trello_sticky_url
-  #end
+    redirect_to trello_sticky_url
+  end
+
+  #organize stickys into the right column
 
   
 end

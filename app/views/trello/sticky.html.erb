@@ -20,6 +20,13 @@
 <div class="column">
 <% @trello.each do |notes|%>
     <div class="trello">
+    <form action="/trello/destroy" method="post" class="deleteX">
+        <input type="hidden" name="id" value="<%=notes.id%>">
+        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+        <button  type="submit" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </form>
     <h1><%=notes.title%></h1> <br>
     <%=notes.body%>
     </div>
