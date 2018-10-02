@@ -5,7 +5,7 @@
 .trello {
     background-color: yellow;
     display: inline-block;
-    position: absolute;
+    
     margin: 10px;
     padding: 10px;
     height: 25vh;
@@ -15,8 +15,14 @@
 .column {
     display:inline-block;
     padding: 20px;
-    position: relative;
+    
 }
 .header {
     font-size: 20pt;
+}
+.form {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 15px;
 }
