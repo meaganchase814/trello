@@ -1,51 +1,18 @@
 <h2>To Do<h2>
-<div class="column">
-    <div class="trello">
-    somestuff
-    </div>
-    <div class="trello">
-    somestuff
-    </div>
-    <div class="trello">
-    somestuff
-    </div>
-</div>
-    <form>
+<form action="/trello/index" method="post">
+        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
         <input id="notes" name="notes" type="text">
         <input type="submit">
-    </form>
-
-<h2>Doing<h2>
-<div class="column">
-    <div class="trello">
-    somestuff
-    </div>
-    <div class="trello">
-    somestuff
-    </div>
-    <div class="trello">
-    somestuff
-    </div>
-</div>
-<form>
-<input type="text">
-<input type="submit">
 </form>
-
-<h2>Done<h2>
 <div class="column">
+<% @trello.each do |notes|%>
     <div class="trello">
-    somestuff
+    <%=notes.title%>
+    <%=notes.body%>
     </div>
-    <div class="trello">
-    somestuff
-    </div>
-    <div class="trello">
-    somestuff
-    </div>
-    <form>
-<input type="text">
-<input type="submit">
-</form>
+<%end%>
 </div>
+
+
+    
 

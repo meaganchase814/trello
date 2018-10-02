@@ -1,8 +1,15 @@
 class TrelloController < ApplicationController
   
-  def sticky
-    @trello = posit.new
-    @trello.posit = params["notes"]
+  def index
+    @trello = Posit.new
+    @trello.body = params["notes"]
     @trello.save
+    redirect_to trello_sticky_url
   end
+  def sticky
+    @trello = Posit.all
+  end
+
+
+  
 end
