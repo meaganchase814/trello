@@ -1,9 +1,14 @@
-<h2>To Do<h2>
 <form action="/trello/index" method="post">
         <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
         <input id="notes" name="notes" type="text">
         <input type="submit">
 </form>
+
+<div class="column" id="todo"><h1 class="header">To Do<h1></div>
+<div class="column" id="doing"><h1 class="header">Doing<h1></div>
+<div class="column" id="done"><h1 class="header">Done<h1></div>
+
+
 <div class="column">
 <% @trello.each do |notes|%>
     <div class="trello">
@@ -12,6 +17,10 @@
     </div>
 <%end%>
 </div>
+
+<div class="column" id="todo"><h1 class="header">To Do<h1></div>
+<div class="column" id="doing"><h1 class="header">Doing<h1></div>
+<div class="column" id="done"><h1 class="header">Done<h1></div>
 
 
     
