@@ -1,7 +1,7 @@
 // Place all the styles related to the trello controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+//<script>play()</script>;
 .trello {
     background-color: rgb(253, 253, 116);
     position:relative;
@@ -26,9 +26,10 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     text-align:center;
-    position:relative;
+    position: relative;
     justify-items: center;
-    background-attachment: fixed;
+    
+    
 }
 .header {
     font-size: 3rem;
@@ -37,7 +38,7 @@
     text-align:center;
     text-shadow:2px 2px 8px rgb(238, 144, 21);
     color: rgb(124, 42, 42);
-  
+    
 }
 .stickyTitle {
    color: rgb(145, 52, 52); 
