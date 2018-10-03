@@ -9,15 +9,13 @@
 <body class="container">  
     <script>
   function play(){
-       const audio = document.getElementById("audio");
+    
+       const audio = document.getElementById("audio"); 
        audio.currentTime = 0;
        audio.play();
       
     }
-    setTimeout(function(){
-    windows.location.reload();
-    },10000)
-    });
+   
     
    </script>
    <audio id="audio" src="\audio\Cat Scream-SoundBible.com-871191563.wav" ></audio>
@@ -41,7 +39,7 @@
             
             
             
-            <input type="submit" value="Execute"  onsubmit="setTimeout()" onclick="play()"  style="background-color: red; border-radius: 200px;">
+            <input type="submit" value="Execute"   onclick="play(this)"  style="background-color: red; border-radius: 200px;">
             
         
         
@@ -141,7 +139,9 @@
 
     </div>
 
-
+<script>
+play();
+</script>
 
 
 </body>
