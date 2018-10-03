@@ -20,7 +20,19 @@ class TrelloController < ApplicationController
     redirect_to trello_sticky_url
   end
 
-  #organize stickys into the right column
+  def update
+    
+    @trello = Posit.find(params[:id])
+    if (@trello.Category == '3')
+      @trello.Category = '1'
+    elsif (@trello.Category == '1')
+      @trello.Category = '2'
+    elsif (@trello.Category == '2')
+      @trello.Category = '3'
+    end
+    @trello.save
+    redirect_to trello_sticky_url
+  end
 
   
 end

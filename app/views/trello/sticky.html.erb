@@ -1,6 +1,9 @@
+<html>
 <head>
+<title class="stickyText">My to BoO list: </title>
 <link href="https://fonts.googleapis.com/css?family=Creepster%7CRoboto+Slab" rel="stylesheet">
 </head>
+
     
     
 <body class="container">   
@@ -25,71 +28,95 @@
     </div>
 
 
-<div class="columns">
-<div  id="todo"><h1 class="header">To Boo</h1>
-<% @trello.each do |notes|%>
-        <%if (notes.Category === "1")%>
-            <div class="trello">
-            <form action="/trello/destroy" method="post" class="deleteX">
-                <input type="hidden" name="id" value="<%=notes.id%>">
-                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-                <button  type="submit" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </form>
-            <div class="thearrow"><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
-            <div class="stickyTitle">
-            <h1><%=notes.title%></h1></div> <br>
-            <div class="stickyText"><%=notes.body%></div>
-            </div>
-        <%end%>
-        
-<%end%> 
-</div>
+    <div class="columns">
 
-<div  id="doing"><h1 class="header">Living</h1>
-<% @trello.each do |notes|%>
-        <%if (notes.Category === "2")%>
-            <div class="trello">
-            <form action="/trello/destroy" method="post" class="deleteX">
-                <input type="hidden" name="id" value="<%=notes.id%>">
-                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-                <button  type="submit" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </form>
-            <div class="thearrow" ><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
-            <div class="stickyTitle">
-            <h1><%=notes.title%></h1></div> <br>
-            <div class="stickyText"><%=notes.body%></div>
-            </div>
-        <%end%>
-        
-<%end%> 
-</div>
+        <div  id="todo"><h1 class="header">To Boo</h1>
+            <% @trello.each do |notes|%>
+                    <%if (notes.Category === "1")%>
+                        <div class="trello">
+                        <form action="/trello/destroy" method="post" class="deleteX">
+                            <input type="hidden" name="id" value="<%=notes.id%>">
+                            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                            <button  type="submit" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </form>
+                        <div  class="thearrow">
+                           <form action="/trello/update" method="post">
+                            <input type="hidden" name="id" value="<%=notes.id%>">
+                            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            </form>
+                        </div>
+                        <br>
+                        <div class="stickyTitle">
+                        <h1><%=notes.title%></h1></div> <br>
+                        <div class="stickyText"><%=notes.body%></div>
+                        </div>
+                    <%end%>
+                    
+            <%end%> 
+        </div>
 
-<div id="done"><h1 class="header">Dead</h1>
+        <div  id="doing"><h1 class="header">Living</h1>
+            <% @trello.each do |notes|%>
+                    <%if (notes.Category === "2")%>
+                        <div class="trello">
+                        <form action="/trello/destroy" method="post" class="deleteX">
+                            <input type="hidden" name="id" value="<%=notes.id%>">
+                            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                            <button  type="submit" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </form>
+                        <div  class="thearrow">
+                           <form action="/trello/update" method="post">
+                            <input type="hidden" name="id" value="<%=notes.id%>">
+                            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            </form>
+                        </div>
+                        <br>
+                        <div class="stickyTitle">
+                        <h1><%=notes.title%></h1></div> <br>
+                        <div class="stickyText"><%=notes.body%></div>
+                        </div>
+                    <%end%>
+                    
+            <%end%> 
+        </div>
 
-    <% @trello.each do |notes|%>
-        <%if (notes.Category === "3")%>
-            <div class="trello">
-            <form action="/trello/destroy" method="post" class="deleteX">
-                <input type="hidden" name="id" value="<%=notes.id%>">
-                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-                <button  type="submit" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </form>
-            <div class="thearrow"><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
-            <div class="stickyTitle">
-            <h1><%=notes.title%></h1></div> <br>
-            <div class="stickyText"><%=notes.body%></div>
-            </div>
-        <%end%>
-        
-<%end%> 
-</div>
-</div>
+        <div id="done"><h1 class="header">Dead</h1>
+            <% @trello.each do |notes|%>
+                <%if (notes.Category === "3")%>
+                    <div class="trello">
+                    <form action="/trello/destroy" method="post" class="deleteX">
+                        <input type="hidden" name="id" value="<%=notes.id%>">
+                        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                        <button  type="submit" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                    <div  class="thearrow">
+                           <form action="/trello/update" method="post">
+                            <input type="hidden" name="id" value="<%=notes.id%>">
+                            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            </form>
+                        </div>
+                        
+                        <br>
+                    <div class="stickyTitle">
+                    <h1><%=notes.title%></h1></div> <br>
+                    <div class="stickyText"><%=notes.body%></div>
+                    </div>
+                <%end%>
+                
+            <%end%> 
+        </div>
+
+    </div>
 
 </body>
+</html>
    
