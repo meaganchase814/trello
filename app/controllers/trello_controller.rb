@@ -3,11 +3,12 @@ class TrelloController < ApplicationController
   def sticky
     @trello = Posit.all
   end
-  
+
   def index
     @trello = Posit.new
     @trello.title = params["title"] 
     @trello.body = params["body"] 
+    @trello.Category = params["Category"]
     @trello.save
     redirect_to trello_sticky_url
   end

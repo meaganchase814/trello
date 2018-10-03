@@ -4,45 +4,58 @@
 
 .trello {
     background-color: rgb(253, 253, 116);
-    display: inline-block;
-    position: relative;
-    margin: 10px;
-    padding: 10px;
+    position:relative;
+    margin:10px;
+    padding: 5px;
     height: auto;
     width: 13vw;
-    box-shadow:2px 2px 8px black;
+    box-shadow:2px 2px 8px rgb(2, 2, 2);
+    text-align: left;
+}
+.container {
+    background-image: url("http://www.twitrcovers.com/wp-content/uploads/2013/04/Horror-Artwork-l.jpg");
+    background-size: cover;
+    
 
 }
-.column {
-    display:inline-block;
-    width: 31vw;
+.columns{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    text-align:center;
     position:relative;
-    
+    justify-items: center;
 }
 .header {
     font-size: 3rem;
-    position:relative;
+    font-family: 'Creepster', cursive,'Roboto Slab', serif;
+    display: inline-block;
     text-align:center;
-    text-shadow:2px 2px 8px black;
+    text-shadow:2px 2px 8px rgb(238, 144, 21);
     color: rgb(124, 42, 42)
 }
 .stickyTitle {
-   color: rgb(52, 52, 145); 
-   font-size: 10pt;
+   color: rgb(145, 52, 52); 
+   font-size: 9pt;
    text-decoration-line: underline;
-   top:10px;
-   display: inline-block;
+   font-family: 'Creepster', cursive,'Roboto Slab', serif;
 }
 .stickyText {
-    color: rgb(154, 154, 194); 
-    font-size: 10pt;
+    color: rgb(250, 57, 57); 
+    font-size: 9pt;
+    word-wrap: normal;
+    font-family: 'Creepster', cursive,'Roboto Slab', serif;
+
+    
  }
 .addstickycontainer {
-    display: inline-block;
-    border:1px solid black;
+    margin-right: 10px;
+   
     padding: 10px;
-    position:relative;
-    
+    z-index: 5;
+    text-align: center;
+    font-family: 'Creepster', cursive,'Roboto Slab', serif;
+    color: grey;
+    font-size: 20px;
 }
 .deleteX {
     position:absolute;
@@ -50,13 +63,18 @@
     right: 10px;
 
 }
-.bodystuff {
-    background-color: rgb(252, 186, 186);
-}
+
 .thearrow {
     position: absolute;
     top: 45px;
-    right: 10px;
+    right: 5px;
     border-radius:30px;
     padding: 5px;
+    display: inline-block;
+    
+}
+.thearrow img {
+    height:25px;
+    width:30px;
+    display: inline-block;
 }

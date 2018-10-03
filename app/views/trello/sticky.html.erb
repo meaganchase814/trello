@@ -1,51 +1,35 @@
-<script>
-function movesticky(currentCol, stickyIDtomove )
-    {
-       if (currentCol === "To Do")
-       {
-           document.getElementById("Doing").innerHTML +=
-           document.getElementById("stickyIDtomove").innerhtml = ""
-       }
-       else if (currentCol === "Doing")
-       {
-           document.getElementById("Done").innerHTML +=
-           document.getElementById("stickyIDtomove").innerhtml = ""
-       }
-        
-    }
-
-</script>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Creepster%7CRoboto+Slab" rel="stylesheet">
+</head>
     
     
-<body class="bodystuff">    
-    <form class="addstickycontainer" action="/trello/index" method="post">
-        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-        <div>Title: <input id="title" name="title" type="text"></div> <br>
-        <div>Text: <input id="body" name="body" type="text"></div><br>
-
-      
-        <div>Category: </div>
-        <select name="category"> 
-        <option value="1">To Do</option>
-        <option value="2">Doing</option> 
-        <option value="3">Done</option><br>
+<body class="container">   
+    <div class="addstickycontainer">
+        <form action="/trello/index" method="post">
+            <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+            <div>Title: <input id="title" name="title" type="text"></div> <br>
+            <div>Text: <input id="body" name="body" type="text"></div><br>
 
         
-        
+            <div>Category: 
+            <select name="Category"> 
+            <option value="1">To Boo</option>
+            <option value="2">Living</option> 
+            <option value="3">Dead</option></select></div><br>
 
-        <input type="submit">
-    </form>
- <br>
+            
+            
+
+            <input type="submit" style="background-color: red; border-radius: 200px;">
+        </form>
+    </div>
 
 
-<div class="column"  id="todo"><h1 class="header">To Do</h1></div>
-<div class="column" id="doing"><h1 class="header">Doing</h1></div>
-<div class="column" id="done"><h1 class="header">Done</h1></div>
-
-
-
-    <% @trello.each do |notes|%>
-        <div class="trello">
+<div class="columns">
+<div  id="todo"><h1 class="header">To Boo</h1>
+<% @trello.each do |notes|%>
+        <%if (notes.Category === "1")%>
+            <div class="trello">
             <form action="/trello/destroy" method="post" class="deleteX">
                 <input type="hidden" name="id" value="<%=notes.id%>">
                 <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
@@ -53,12 +37,59 @@ function movesticky(currentCol, stickyIDtomove )
                 <span aria-hidden="true">&times;</span>
                 </button>
             </form>
-            <div class="thearrow"> => </div><br>
+            <div class="thearrow"><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
             <div class="stickyTitle">
             <h1><%=notes.title%></h1></div> <br>
             <div class="stickyText"><%=notes.body%></div>
-        </div>
-    <%end%> 
+            </div>
+        <%end%>
+        
+<%end%> 
+</div>
+
+<div  id="doing"><h1 class="header">Living</h1>
+<% @trello.each do |notes|%>
+        <%if (notes.Category === "2")%>
+            <div class="trello">
+            <form action="/trello/destroy" method="post" class="deleteX">
+                <input type="hidden" name="id" value="<%=notes.id%>">
+                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                <button  type="submit" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+            <div class="thearrow" ><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
+            <div class="stickyTitle">
+            <h1><%=notes.title%></h1></div> <br>
+            <div class="stickyText"><%=notes.body%></div>
+            </div>
+        <%end%>
+        
+<%end%> 
+</div>
+
+<div id="done"><h1 class="header">Dead</h1>
+
+    <% @trello.each do |notes|%>
+        <%if (notes.Category === "3")%>
+            <div class="trello">
+            <form action="/trello/destroy" method="post" class="deleteX">
+                <input type="hidden" name="id" value="<%=notes.id%>">
+                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                <button  type="submit" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+            <div class="thearrow"><img src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/></div><br>
+            <div class="stickyTitle">
+            <h1><%=notes.title%></h1></div> <br>
+            <div class="stickyText"><%=notes.body%></div>
+            </div>
+        <%end%>
+        
+<%end%> 
+</div>
+</div>
 
 </body>
    
