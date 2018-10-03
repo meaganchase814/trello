@@ -1,5 +1,9 @@
 class TrelloController < ApplicationController
   
+  def sticky
+    @trello = Posit.all
+  end
+  
   def index
     @trello = Posit.new
     @trello.title = params["title"] 
@@ -7,9 +11,7 @@ class TrelloController < ApplicationController
     @trello.save
     redirect_to trello_sticky_url
   end
-  def sticky
-    @trello = Posit.all
-  end
+  
   def destroy
     @trello = Posit.find(params[:id])
     @trello.destroy

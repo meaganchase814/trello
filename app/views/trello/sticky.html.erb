@@ -1,37 +1,64 @@
-<div class="form">
-<form action="/trello/index" method="post">
+<script>
+function movesticky(currentCol, stickyIDtomove )
+    {
+       if (currentCol === "To Do")
+       {
+           document.getElementById("Doing").innerHTML +=
+           document.getElementById("stickyIDtomove").innerhtml = ""
+       }
+       else if (currentCol === "Doing")
+       {
+           document.getElementById("Done").innerHTML +=
+           document.getElementById("stickyIDtomove").innerhtml = ""
+       }
+        
+    }
+
+</script>
+    
+    
+<body class="bodystuff">    
+    <form class="addstickycontainer" action="/trello/index" method="post">
         <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-        <input id="title" name="title" type="text"> <br>
-        <input id="body" name="body" type="text"><br>
+        <div>Title: <input id="title" name="title" type="text"></div> <br>
+        <div>Text: <input id="body" name="body" type="text"></div><br>
+
+      
+        <div>Category: </div>
         <select name="category"> 
         <option value="1">To Do</option>
         <option value="2">Doing</option> 
-        <option value="3">Done</option>
+        <option value="3">Done</option><br>
+
+        
+        
 
         <input type="submit">
-</form>
-</div>
-
-<div class="column" id="todo"><h1 class="header">To Do<h1></div>
-<div class="column" id="doing"><h1 class="header">Doing<h1></div>
-<div class="column" id="done"><h1 class="header">Done<h1></div>
-
-
-<div class="column">
-<% @trello.each do |notes|%>
-    <div class="trello">
-    <form action="/trello/destroy" method="post" class="deleteX">
-        <input type="hidden" name="id" value="<%=notes.id%>">
-        <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-        <button  type="submit" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
     </form>
-    <h1><%=notes.title%></h1> <br>
-    <%=notes.body%>
-    </div>
-<%end%>
-</div>
+ <br>
 
 
-      
+<div class="column"  id="todo"><h1 class="header">To Do</h1></div>
+<div class="column" id="doing"><h1 class="header">Doing</h1></div>
+<div class="column" id="done"><h1 class="header">Done</h1></div>
+
+
+
+    <% @trello.each do |notes|%>
+        <div class="trello">
+            <form action="/trello/destroy" method="post" class="deleteX">
+                <input type="hidden" name="id" value="<%=notes.id%>">
+                <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+                <button  type="submit" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+            <div class="thearrow"> => </div><br>
+            <div class="stickyTitle">
+            <h1><%=notes.title%></h1></div> <br>
+            <div class="stickyText"><%=notes.body%></div>
+        </div>
+    <%end%> 
+
+</body>
+   

@@ -3,29 +3,60 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .trello {
-    background-color: yellow;
+    background-color: rgb(253, 253, 116);
     display: inline-block;
-    
+    position: relative;
     margin: 10px;
     padding: 10px;
-    height: 25vh;
-    width: 20vw;
+    height: auto;
+    width: 13vw;
+    box-shadow:2px 2px 8px black;
 
 }
 .column {
     display:inline-block;
-    padding: 20px;
+    width: 31vw;
+    position:relative;
     
 }
 .header {
-    font-size: 20pt;
+    font-size: 3rem;
+    position:relative;
+    text-align:center;
+    text-shadow:2px 2px 8px black;
+    color: rgb(124, 42, 42)
 }
-.form {
+.stickyTitle {
+   color: rgb(52, 52, 145); 
+   font-size: 10pt;
+   text-decoration-line: underline;
+   top:10px;
+   display: inline-block;
+}
+.stickyText {
+    color: rgb(154, 154, 194); 
+    font-size: 10pt;
+ }
+.addstickycontainer {
     display: inline-block;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 15px;
+    border:1px solid black;
+    padding: 10px;
+    position:relative;
+    
 }
 .deleteX {
     position:absolute;
+    top: 15px;
+    right: 10px;
+
+}
+.bodystuff {
+    background-color: rgb(252, 186, 186);
+}
+.thearrow {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    border-radius:30px;
+    padding: 5px;
 }
