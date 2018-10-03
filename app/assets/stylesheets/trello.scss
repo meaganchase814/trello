@@ -15,7 +15,11 @@
 .container {
     background-image: url("http://www.twitrcovers.com/wp-content/uploads/2013/04/Horror-Artwork-l.jpg");
     background-size: cover;
-    
+    background-position: center;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
 
 }
 .columns{
@@ -24,6 +28,7 @@
     text-align:center;
     position:relative;
     justify-items: center;
+    background-attachment: fixed;
 }
 .header {
     font-size: 3rem;
@@ -31,7 +36,8 @@
     display: inline-block;
     text-align:center;
     text-shadow:2px 2px 8px rgb(238, 144, 21);
-    color: rgb(124, 42, 42)
+    color: rgb(124, 42, 42);
+  
 }
 .stickyTitle {
    color: rgb(145, 52, 52); 
@@ -44,8 +50,13 @@
     font-size: 9pt;
     word-wrap: normal;
     font-family: 'Creepster', cursive,'Roboto Slab', serif;
-
-    
+ }
+ .title {
+     text-align: center;
+    font-size: 30pt;
+    font-family: 'Creepster', cursive,'Roboto Slab', serif;
+    color: rgb(250, 191, 83);
+    text-shadow:2px 2px 8px rgb(247, 100, 15);
  }
 .addstickycontainer {
     margin-right: 10px;

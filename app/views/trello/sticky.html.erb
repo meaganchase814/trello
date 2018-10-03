@@ -1,12 +1,26 @@
 <html>
 <head>
-<title class="stickyText">My to BoO list: </title>
+
 <link href="https://fonts.googleapis.com/css?family=Creepster%7CRoboto+Slab" rel="stylesheet">
 </head>
 
     
     
-<body class="container">   
+<body class="container">  
+    <script>
+  function play(){
+       const audio = document.getElementById("audio");
+       audio.currentTime = 0;
+       audio.play();
+      
+    }
+    
+   </script>
+   <audio id="audio" src="\audio\Cat Scream-SoundBible.com-871191563.wav" ></audio>
+
+    
+
+    <div class="title">My to BoO list: </div>
     <div class="addstickycontainer">
         <form action="/trello/index" method="post">
             <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
@@ -22,8 +36,13 @@
 
             
             
-
-            <input type="submit" style="background-color: red; border-radius: 200px;">
+            
+            <input type="submit" value="Execute"  onclick="play()"  style="background-color: red; border-radius: 200px;">
+            
+        
+        
+        
+        
         </form>
     </div>
 
@@ -37,7 +56,8 @@
                         <form action="/trello/destroy" method="post" class="deleteX">
                             <input type="hidden" name="id" value="<%=notes.id%>">
                             <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
-                            <button  type="submit" aria-label="Close">
+                            <button  type="submit" aria-label="Close" >
+                            
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </form>
@@ -45,7 +65,7 @@
                            <form action="/trello/update" method="post">
                             <input type="hidden" name="id" value="<%=notes.id%>">
                             <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
-                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png > 
                             </form>
                         </div>
                         <br>
@@ -73,7 +93,7 @@
                            <form action="/trello/update" method="post">
                             <input type="hidden" name="id" value="<%=notes.id%>">
                             <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
-                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png >
                             </form>
                         </div>
                         <br>
@@ -101,7 +121,7 @@
                            <form action="/trello/update" method="post">
                             <input type="hidden" name="id" value="<%=notes.id%>">
                             <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"> 
-                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png/> >
+                            <input type="image" name="BloodyArrow" height="25px" width="30px" src=https://image.spreadshirtmedia.com/image-server/v1/mp/designs/12319408,width=178,height=178/bloody-arrow.png >
                             </form>
                         </div>
                         
@@ -117,6 +137,9 @@
 
     </div>
 
+
+
+<script>play()</script>
 </body>
 </html>
    
